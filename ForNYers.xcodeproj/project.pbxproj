@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EB09CE2B05A3F932ECB65F2 /* Pods_ForNYers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A28C6C3A286A7E72CFD49E /* Pods_ForNYers.framework */; };
+		98063AF71DF0A6B500E1184A /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98063AF61DF0A6B500E1184A /* NewsTableViewCell.swift */; };
 		9811550A1DE8F01800AC53D3 /* NewsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981155091DE8F01800AC53D3 /* NewsClient.swift */; };
 		9811550C1DE8F0AD00AC53D3 /* NewsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811550B1DE8F0AD00AC53D3 /* NewsConstants.swift */; };
 		9811550E1DE939BA00AC53D3 /* NewsConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811550D1DE939BA00AC53D3 /* NewsConvenience.swift */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1118D5D5614F819EF0EABF35 /* Pods-ForNYers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForNYers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers.debug.xcconfig"; sourceTree = "<group>"; };
+		17A28C6C3A286A7E72CFD49E /* Pods_ForNYers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForNYers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98063AF61DF0A6B500E1184A /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		981155091DE8F01800AC53D3 /* NewsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsClient.swift; sourceTree = "<group>"; };
 		9811550B1DE8F0AD00AC53D3 /* NewsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConstants.swift; sourceTree = "<group>"; };
 		9811550D1DE939BA00AC53D3 /* NewsConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConvenience.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		9812C0141DE5FB1400554FA4 /* StepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		98172D131DE9E5020026A4D6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		98172D161DE9E5800026A4D6 /* ForNYers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForNYers.xcdatamodel; sourceTree = "<group>"; };
+		99E5BB49605BD9A2410E9B24 /* Pods-ForNYers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForNYers.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB09CE2B05A3F932ECB65F2 /* Pods_ForNYers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				9812BFFD1DE5F30C00554FA4 /* ForNYers */,
 				9812BFFC1DE5F30C00554FA4 /* Products */,
+				A9340310690FDE2EAFECC994 /* Pods */,
+				D9EDD7A7801107A858FE0354 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				9812C0021DE5F30C00554FA4 /* Main.storyboard */,
+				98063AF61DF0A6B500E1184A /* NewsTableViewCell.swift */,
 				9812C0071DE5F30C00554FA4 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -120,6 +130,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A9340310690FDE2EAFECC994 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1118D5D5614F819EF0EABF35 /* Pods-ForNYers.debug.xcconfig */,
+				99E5BB49605BD9A2410E9B24 /* Pods-ForNYers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9EDD7A7801107A858FE0354 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17A28C6C3A286A7E72CFD49E /* Pods_ForNYers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9812C00D1DE5F30C00554FA4 /* Build configuration list for PBXNativeTarget "ForNYers" */;
 			buildPhases = (
+				7ACAF3147A1700F6CCE5B492 /* [CP] Check Pods Manifest.lock */,
 				9812BFF71DE5F30C00554FA4 /* Sources */,
 				9812BFF81DE5F30C00554FA4 /* Frameworks */,
 				9812BFF91DE5F30C00554FA4 /* Resources */,
+				AAF1BB59482AE5586EE45D36 /* [CP] Embed Pods Frameworks */,
+				CAC5455B864F7036EC72F564 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,12 +218,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7ACAF3147A1700F6CCE5B492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AAF1BB59482AE5586EE45D36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAC5455B864F7036EC72F564 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9812BFF71DE5F30C00554FA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9811550C1DE8F0AD00AC53D3 /* NewsConstants.swift in Sources */,
+				98063AF71DF0A6B500E1184A /* NewsTableViewCell.swift in Sources */,
 				9812C0131DE5FAFA00554FA4 /* MetroCardViewController.swift in Sources */,
 				9811550E1DE939BA00AC53D3 /* NewsConvenience.swift in Sources */,
 				98172D171DE9E5800026A4D6 /* ForNYers.xcdatamodeld in Sources */,
@@ -246,6 +325,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -296,6 +376,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -323,6 +404,7 @@
 		};
 		9812C00E1DE5F30C00554FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1118D5D5614F819EF0EABF35 /* Pods-ForNYers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56SGSJ5YCY;
@@ -337,6 +419,7 @@
 		};
 		9812C00F1DE5F30C00554FA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E5BB49605BD9A2410E9B24 /* Pods-ForNYers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56SGSJ5YCY;

@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import Money
 
 class TipCalcViewController: UIViewController {
 
+    
+    @IBOutlet weak var billAmount: UITextField!
+    @IBOutlet weak var tipAmount: UILabel!
+    @IBOutlet weak var totalAmount: UILabel!
+    @IBOutlet weak var tipPercentage: UISegmentedControl!
+    
+    
+    var money:Money = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +32,26 @@ class TipCalcViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func calculate(_ sender: UIButton) {
+        print(billAmount.text!)
+        
+        billAmount.text = billAmount.text?.replacingOccurrences(of: "$", with: "")
+        billAmount.text = billAmount.text?.replacingOccurrences(of: ".", with: "")
+        billAmount.text = billAmount.text?.replacingOccurrences(of: ",", with: "")
+
+        print(billAmount.text!)
+        
+        let intBillAmount = Int(billAmount.text!)!
+        
+        money = Money(minorUnits: intBillAmount)
+        billAmount.text = String(describing: money)
+        
+        tipAmount.text = String(describing: money * 0.15)
+        tipAmount.isHidden = false
+        
+        totalAmount.text = String(describing: money * 1.15)
+        totalAmount.isHidden = false
     }
-    */
 
 }
