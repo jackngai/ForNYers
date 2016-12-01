@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class NewsClient: NSObject {
     
     var session = URLSession.shared
+    
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     
     // MARK: Convert Received JSON data to foundation objects
     fileprivate func convertDataWithCompletionHandler(data: Data, completionHandler: (_ result: AnyObject?, _ error: Error?)->Void){

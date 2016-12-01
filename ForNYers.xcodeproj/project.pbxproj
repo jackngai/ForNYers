@@ -20,9 +20,14 @@
 		9812C0151DE5FB1400554FA4 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C0141DE5FB1400554FA4 /* StepsViewController.swift */; };
 		98172D141DE9E5020026A4D6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98172D131DE9E5020026A4D6 /* CoreDataStack.swift */; };
 		98172D171DE9E5800026A4D6 /* ForNYers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98172D151DE9E5800026A4D6 /* ForNYers.xcdatamodeld */; };
+		981749371DEE1B9400B2DD8F /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981749361DEE1B9400B2DD8F /* NewsTableViewCell.swift */; };
+		D5D02240ED50C1FB5E17D69B /* Pods_ForNYers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F2F94D0117D29557F28425 /* Pods_ForNYers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BD1861E0E8C8B55239FE955 /* Pods-ForNYers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForNYers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers.debug.xcconfig"; sourceTree = "<group>"; };
+		47D6CABC9E25BAB4B27FB5AB /* Pods-ForNYers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForNYers.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers.release.xcconfig"; sourceTree = "<group>"; };
+		62F2F94D0117D29557F28425 /* Pods_ForNYers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForNYers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981155091DE8F01800AC53D3 /* NewsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsClient.swift; sourceTree = "<group>"; };
 		9811550B1DE8F0AD00AC53D3 /* NewsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConstants.swift; sourceTree = "<group>"; };
 		9811550D1DE939BA00AC53D3 /* NewsConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConvenience.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		9812C0141DE5FB1400554FA4 /* StepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		98172D131DE9E5020026A4D6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		98172D161DE9E5800026A4D6 /* ForNYers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForNYers.xcdatamodel; sourceTree = "<group>"; };
+		981749361DEE1B9400B2DD8F /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D02240ED50C1FB5E17D69B /* Pods_ForNYers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		382EAC1855B1411CF9BAAE9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62F2F94D0117D29557F28425 /* Pods_ForNYers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81E74065960F90510BB3FA88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BD1861E0E8C8B55239FE955 /* Pods-ForNYers.debug.xcconfig */,
+				47D6CABC9E25BAB4B27FB5AB /* Pods-ForNYers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9812BFF21DE5F30C00554FA4 = {
 			isa = PBXGroup;
 			children = (
 				9812BFFD1DE5F30C00554FA4 /* ForNYers */,
 				9812BFFC1DE5F30C00554FA4 /* Products */,
+				81E74065960F90510BB3FA88 /* Pods */,
+				382EAC1855B1411CF9BAAE9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9812C0021DE5F30C00554FA4 /* Main.storyboard */,
+				981749361DEE1B9400B2DD8F /* NewsTableViewCell.swift */,
 				9812C0071DE5F30C00554FA4 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -127,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9812C00D1DE5F30C00554FA4 /* Build configuration list for PBXNativeTarget "ForNYers" */;
 			buildPhases = (
+				3C76CEDF31BB35276986258D /* [CP] Check Pods Manifest.lock */,
 				9812BFF71DE5F30C00554FA4 /* Sources */,
 				9812BFF81DE5F30C00554FA4 /* Frameworks */,
 				9812BFF91DE5F30C00554FA4 /* Resources */,
+				04D51ED6261F4F461315B5B1 /* [CP] Embed Pods Frameworks */,
+				E252AA097FCE47C1780B4FA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,6 +183,7 @@
 					9812BFFA1DE5F30C00554FA4 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 56SGSJ5YCY;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -188,12 +219,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04D51ED6261F4F461315B5B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C76CEDF31BB35276986258D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E252AA097FCE47C1780B4FA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9812BFF71DE5F30C00554FA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9811550C1DE8F0AD00AC53D3 /* NewsConstants.swift in Sources */,
+				981749371DEE1B9400B2DD8F /* NewsTableViewCell.swift in Sources */,
 				9812C0131DE5FAFA00554FA4 /* MetroCardViewController.swift in Sources */,
 				9811550E1DE939BA00AC53D3 /* NewsConvenience.swift in Sources */,
 				98172D171DE9E5800026A4D6 /* ForNYers.xcdatamodeld in Sources */,
@@ -230,100 +310,62 @@
 /* Begin XCBuildConfiguration section */
 		9812C00B1DE5F30C00554FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD1861E0E8C8B55239FE955 /* Pods-ForNYers.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		9812C00C1DE5F30C00554FA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D6CABC9E25BAB4B27FB5AB /* Pods-ForNYers.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		9812C00E1DE5F30C00554FA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD1861E0E8C8B55239FE955 /* Pods-ForNYers.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56SGSJ5YCY;
 				INFOPLIST_FILE = ForNYers/Info.plist;
@@ -337,7 +379,9 @@
 		};
 		9812C00F1DE5F30C00554FA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D6CABC9E25BAB4B27FB5AB /* Pods-ForNYers.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 56SGSJ5YCY;
 				INFOPLIST_FILE = ForNYers/Info.plist;
