@@ -368,7 +368,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEe-Df-uEs">
-                                                    <rect key="frame" x="8" y="219" width="124" height="12"/>
+                                                    <rect key="frame" x="8" y="219" width="134" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -380,7 +380,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6n-ud-7Ec">
-                                                    <rect key="frame" x="137" y="219" width="198" height="11"/>
+                                                    <rect key="frame" x="147" y="219" width="188" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -396,7 +396,7 @@
                                                 <constraint firstItem="Ggt-Rb-2mG" firstAttribute="top" secondItem="B6n-ud-7Ec" secondAttribute="bottom" constant="5" id="0oC-Tl-aeL"/>
                                                 <constraint firstItem="qEe-Df-uEs" firstAttribute="leading" secondItem="q9J-gW-jNp" secondAttribute="leadingMargin" id="6rq-GE-K8j"/>
                                                 <constraint firstItem="Ggt-Rb-2mG" firstAttribute="bottom" secondItem="q9J-gW-jNp" secondAttribute="bottom" constant="-5" id="CZe-mI-fpV"/>
-                                                <constraint firstItem="B6n-ud-7Ec" firstAttribute="width" secondItem="qEe-Df-uEs" secondAttribute="width" multiplier="1.6" id="EV0-WR-j5Z"/>
+                                                <constraint firstItem="B6n-ud-7Ec" firstAttribute="width" secondItem="qEe-Df-uEs" secondAttribute="width" multiplier="1.4" id="EV0-WR-j5Z"/>
                                                 <constraint firstItem="o5z-NB-MrT" firstAttribute="top" secondItem="q9J-gW-jNp" secondAttribute="topMargin" id="Fa5-ZR-n11"/>
                                                 <constraint firstItem="B6n-ud-7Ec" firstAttribute="leading" secondItem="qEe-Df-uEs" secondAttribute="trailing" constant="5" id="FnK-pz-rFu"/>
                                                 <constraint firstItem="Ggt-Rb-2mG" firstAttribute="leading" secondItem="q9J-gW-jNp" secondAttribute="leadingMargin" id="Gnx-IL-p9x"/>

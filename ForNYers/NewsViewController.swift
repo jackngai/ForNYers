@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import XCGLogger
+import ReachabilitySwift
 
 class NewsViewController: UIViewController {
 
@@ -24,6 +25,8 @@ class NewsViewController: UIViewController {
     var context = CoreDataStack.sharedInstance().persistentContainer.viewContext
     
     var fetchedResultsController: NSFetchedResultsController<Article>!
+    
+    var internetConnection = true
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -42,6 +45,19 @@ class NewsViewController: UIViewController {
         
         newsTableView.dataSource = self
         newsTableView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !internetConnection{
+            let alertController = UIAlertController(title: "No Internet Connection", message: "Displaying articles from the most recent download.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+            
+            internetConnection = true
+        }
     }
     
     // MARK: Actions
@@ -68,8 +84,6 @@ extension NewsViewController {
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         formatter.dateFormat = "MM-dd-yyyy hh:MM a"
-        let stringDate: String = formatter.string(from: newsItem.publishedAt as! Date)
-        print(stringDate)
         
         cell.newsTitle.text = newsItem.title
         cell.newsDescription.text = newsItem.desc

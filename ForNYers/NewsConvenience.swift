@@ -81,8 +81,9 @@ extension NewsClient {
                     return
                 }
                 
+                // MARK: Test Code
                 print("Total articles: \(articlesArray.count)")
-                
+                // End Test Code
                 
                 
                 context.perform {
@@ -126,16 +127,16 @@ extension NewsClient {
                         articleObject.image = imageData as NSData?
                     }
                     
-                }
-                
-                // TODO: Doesn't seem to be saving properly according SQLite viewer
-                // Need to troubleshoot why
-                
-                do {
-                    try context.save()
-                    self.appDelegate.log.verbose("Saved to Core Data")
-                } catch let error as NSError {
-                    print("Unable to save \(error), \(error.userInfo)")
+                    // TODO: Doesn't seem to be saving properly according SQLite viewer
+                    // Need to troubleshoot why
+                    
+                    do {
+                        try context.save()
+                        self.appDelegate.log.verbose("Saved to Core Data")
+                    } catch let error as NSError {
+                        print("Unable to save \(error), \(error.userInfo)")
+                    }
+                    
                 }
                 
             })
@@ -147,6 +148,12 @@ extension NewsClient {
         }
         else {
             print("No internet connection")
+
+            //NewsViewController.present(alertController)
+            if let vc = appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
+                vc.internetConnection = false
+            }
+            
         }
     
         reachability.stopNotifier()
