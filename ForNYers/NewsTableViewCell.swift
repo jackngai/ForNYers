@@ -6,6 +6,9 @@
 //  Copyright © 2016 Jack Ngai. All rights reserved.
 //
 
+// TODO: Delete the elements and start from scratch
+// small changes are not working, for whatever reason
+
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
@@ -20,10 +23,11 @@ class NewsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // old code to troubleshoot issue with image overlapping text
+        // newsImage.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         
         
-        //newsImage.image?.size = CGSize(width: 120, height: 90)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

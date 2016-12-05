@@ -16,7 +16,6 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     
     // MARK: Properties
-    var newsArray : [String] = []
     
     fileprivate let newsCellReuseIdentifier = "newsCell"
     
@@ -29,6 +28,10 @@ class NewsViewController: UIViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Dynamic Row Height
+        newsTableView.rowHeight = UITableViewAutomaticDimension
+        newsTableView.estimatedRowHeight = 220
         
         // Get News from newsAPI Step 1: Call Get news and provide it the managed context
         // (Step 2 in NewsConvenience.swift)
@@ -36,7 +39,7 @@ class NewsViewController: UIViewController {
         fetchedResultsController = NewsClient.sharedInstance().getNews(managed: context)
         
         fetchedResultsController.delegate = self
-
+        
         newsTableView.dataSource = self
         newsTableView.delegate = self
     }
@@ -64,34 +67,19 @@ extension NewsViewController {
         let formatter = DateFormatter()
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
-        formatter.dateFormat = "MM-dd-yyyy HH:MM a"
+        formatter.dateFormat = "MM-dd-yyyy hh:MM a"
         let stringDate: String = formatter.string(from: newsItem.publishedAt as! Date)
         print(stringDate)
         
-        
-        
         cell.newsTitle.text = newsItem.title
         cell.newsDescription.text = newsItem.desc
-        
-        
         cell.newsDate.text = formatter.string(from: newsItem.publishedAt as! Date)
         cell.newsBy.text = newsItem.author
         
-        let image = UIImage(data: newsItem.image as! Data)
-        print(image!.size)
-        cell.imageView?.image = image
+        let image = UIImage(data: newsItem.image as! Data)!
         
-        // Draws a blue rectangle instead of the image
-        //cell.imageView?.image = imageWithImage(image: image!, scaledToSize: CGSize(width: 20, height: 20))
-    }
-    
-    func imageWithImage(image:UIImage,scaledToSize newSize:CGSize)->UIImage{
+        cell.newsImage.image = image
         
-        UIGraphicsBeginImageContext( newSize )
-        image.draw(in: CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!.withRenderingMode(.alwaysTemplate)
     }
     
 }
@@ -107,6 +95,7 @@ extension NewsViewController: UITableViewDataSource {
         
         appDelegate.log.verbose(sectionInfo.numberOfObjects)
         return sectionInfo.numberOfObjects
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

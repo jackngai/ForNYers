@@ -60,6 +60,7 @@ extension NewsClient {
             
             // Setup the request using parameters
             let getRequest = NewsClient.sharedInstance().get(parameters: methodParameters as [String: AnyObject])
+        
             
             // Start the task
             let task = NewsClient.sharedInstance().startTask(request: getRequest, completionHandlerForTask: {
@@ -102,46 +103,46 @@ extension NewsClient {
                         }
                     }
             
-                    
-                    // Create article object
-                    let articleObject = Article(context: context)
-                    
                     let dateFor = DateFormatter()
                     dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssX"
                     
+                    
+                    let entity = NSEntityDescription.entity(forEntityName: "Article", in: context)!
+                    
                     for article in articlesArray{
                         
+                        let articleObject =  Article(entity: entity, insertInto: context)
                         articleObject.author = article["author"] as? String ?? ""
                         articleObject.desc = article["description"] as? String ?? ""
                         articleObject.title = article["title"] as? String ?? ""
                         articleObject.url = article["url"] as? String ?? ""
                         articleObject.publishedAt = dateFor.date(from: article["publishedAt"] as? String ?? "") as NSDate?
-                        
+
                         guard let imageURL = URL(string: article["urlToImage"] as? String ?? ""),
                             let imageData = try? Data(contentsOf: imageURL) else {
                                 print("Unable to process url into image")
                                 fatalError("Unable to process url into image")
                         }
-                        
                         articleObject.image = imageData as NSData?
-                        
-                        
                     }
                     
                 }
+                
+                // TODO: Doesn't seem to be saving properly according SQLite viewer
+                // Need to troubleshoot why
+                
                 do {
                     try context.save()
+                    self.appDelegate.log.verbose("Saved to Core Data")
                 } catch let error as NSError {
                     print("Unable to save \(error), \(error.userInfo)")
                 }
+                
             })
             
             task.resume()
             
-            //let filledFRC = self.fillFRC(managed: context)
-            
             return self.fillFRC(managed: context)
-            
             
         }
         else {
@@ -151,76 +152,10 @@ extension NewsClient {
         reachability.stopNotifier()
         
         return fillFRC(managed: context)
+
     }
     
 }
 
 
-/*
- 
- (lldb) po article["title"] as String
- "Fidel Castro, Cuban Revolutionary Who Defied U.S., Dies at 90"
- 
- 
- Fix-it applied, fixed expression was:
- article["title"] as! String
- (lldb) po article["url"] as! String
- "http://www.nytimes.com/2016/11/26/world/americas/fidel-castro-dies.html"
- 
- 
- (lldb) po article["publishedAt"] as! Date
- Could not cast value of type '__NSCFString' (0x39311cc) to 'NSDate' (0x393176c).
- error: Execution was interrupted, reason: signal SIGABRT.
- The process has been returned to the state before expression evaluation.
- (lldb) po article["publishedAt"] as! String
- "2016-11-26T16:14:35Z"
- 
- 
- {
- "status": "ok",
- "source": "the-new-york-times",
- "sortBy": "top",
- "articles": [
- {
- "author": "Anita Gates",
- "title": "Florence Henderson, Upbeat Mom of ‘The Brady Bunch,’ Dies at 82",
- "description": "Her career began with stage musicals, but Ms. Henderson’s touchstone role as the perky matriarch of a 1970s blended family made her an enduring TV presence for decades.",
- "url": "http://www.nytimes.com/2016/11/25/arts/television/florence-henderson-brady-bunch-dies.html",
- "urlToImage": "https://static01.nyt.com/images/2016/11/26/arts/26henderson-obit-1/26henderson-obit-1-facebookJumbo.jpg",
- "publishedAt": "2016-11-26T07:08:43Z"
- },
- {
- "author": "Charles M. Blow",
- "title": "No, Trump, We Can’t Just Get Along",
- "description": "You don’t get a pat on the back for ratcheting down from rabid.",
- "url": "http://www.nytimes.com/2016/11/23/opinion/no-trump-we-cant-just-get-along.html",
- "urlToImage": "https://static01.nyt.com/images/2016/11/24/opinion/24blowWeb/24blowWeb-facebookJumbo-v3.jpg",
- "publishedAt": "2016-11-26T04:32:04Z"
- },
- */
 
-
-
-/*
- {
- "photos": {
- "page": 1,
- "pages": 8,
- "perpage": 250,
- "total": "1902",
- "photo": [
- {
- "id": "30414730454",
- "owner": "23120543@N02",
- "secret": "3cc432e71f",
- "server": "5333",
- "farm": 6,
- "title": "At home...",
- "ispublic": 1,
- "isfriend": 0,
- "isfamily": 0,
- "url_m": "https://farm6.staticflickr.com/5333/30414730454_3cc432e71f.jpg",
- "height_m": "500",
- "width_m": "500"
- },
- */
