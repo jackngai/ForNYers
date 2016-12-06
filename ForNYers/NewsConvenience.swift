@@ -12,6 +12,49 @@ import ReachabilitySwift
 
 extension NewsClient {
     
+    func startReachability()->Reachability{
+        let reachability = Reachability()!
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        return reachability
+    }
+    
+    func deleteOldNews(managed context: NSManagedObjectContext){
+        
+        
+        let reachability = startReachability()
+        
+        if reachability.isReachable{
+            // Get News from newsAPI Step 3: Delete from Core Data (if exists)
+            let fetchRequest = NSFetchRequest<Article>(entityName: "Article")
+            
+            if let count = try? context.count(for: fetchRequest){
+                if count > 0 {
+                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+                    
+                    deleteRequest.resultType = .resultTypeCount
+                    
+                    do {
+                        let batchResult = try context.execute(deleteRequest) as! NSBatchDeleteResult
+                        self.appDelegate.log.verbose("Records deleted: \(batchResult.result!)")
+                    } catch let error as NSError {
+                        print("Unable to batch delete article objects: \(error), \(error.userInfo)")
+                    }
+                }
+                else {
+                    appDelegate.log.verbose("No old news found")
+                }
+            }
+        } else {
+            appDelegate.log.verbose("No internet connection - keeping old news")
+        }
+        reachability.stopNotifier()
+    }
+    
     func fillFRC(managed context: NSManagedObjectContext)->NSFetchedResultsController<Article>{
         // Display news from Core Data Step 1: Create fetch request
         let fetchRequest : NSFetchRequest<Article> = Article.fetchRequest()
@@ -40,13 +83,7 @@ extension NewsClient {
     
     func getNews(managed context: NSManagedObjectContext)->NSFetchedResultsController<Article>{
         
-        let reachability = Reachability()!
-        
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
-        }
+        let reachability = startReachability()
         
         
         // Get News from newsAPI Step 2: If internet is available, download from newsAPI
@@ -88,21 +125,7 @@ extension NewsClient {
                 
                 context.perform {
                     
-                    // Get News from newsAPI Step 3: Delete from Core Data (if exists)
-                    let fetchRequest = NSFetchRequest<Article>(entityName: "Article")
-                    
-                    if let count = try? context.count(for: fetchRequest){
-                        if count > 0 {
-                            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
-                            
-                            do {
-                                let batchResult = try context.execute(deleteRequest) as! NSBatchDeleteResult
-                                print("Records deleted: \(batchResult.result!)")
-                            } catch let error as NSError {
-                                print("Unable to batch delete article objects: \(error), \(error.userInfo)")
-                            }
-                        }
-                    }
+
             
                     let dateFor = DateFormatter()
                     dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssX"

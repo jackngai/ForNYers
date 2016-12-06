@@ -36,6 +36,8 @@ class NewsViewController: UIViewController {
         newsTableView.rowHeight = UITableViewAutomaticDimension
         newsTableView.estimatedRowHeight = 220
         
+        NewsClient.sharedInstance().deleteOldNews(managed: context)
+        
         // Get News from newsAPI Step 1: Call Get news and provide it the managed context
         // (Step 2 in NewsConvenience.swift)
         
@@ -121,6 +123,14 @@ extension NewsViewController: UITableViewDataSource {
 }
 
 extension NewsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: Open the URL for the selected item in a another view
+        
+        let newsItem = fetchedResultsController.object(at: indexPath)
+        
+        UIApplication.shared.open(URL(string: newsItem.url!)!)
+    }
     
 }
 

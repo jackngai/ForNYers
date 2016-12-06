@@ -134,7 +134,7 @@
                             <constraint firstItem="XbO-Ht-KMT" firstAttribute="centerX" secondItem="WYL-Gw-hYS" secondAttribute="centerX" id="zPk-GB-c3T"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tip Calc" id="1uT-Xl-Izz"/>
+                    <tabBarItem key="tabBarItem" title="Tip Calc" image="Tips" id="1uT-Xl-Izz"/>
                     <connections>
                         <outlet property="billAmount" destination="XbO-Ht-KMT" id="XcR-T6-pE2"/>
                         <outlet property="tipAmount" destination="XaL-GV-RwZ" id="04a-yT-rSr"/>
@@ -238,7 +238,7 @@
                             <constraint firstItem="NN1-wU-a1T" firstAttribute="top" secondItem="phz-Cn-poj" secondAttribute="bottom" constant="14" id="v4m-l1-Eaq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Steps Calc" id="oAu-Ue-Kfb"/>
+                    <tabBarItem key="tabBarItem" title="Steps Calc" image="Steps" id="oAu-Ue-Kfb"/>
                     <connections>
                         <outlet property="avesWalkedTextField" destination="XMu-Nq-vVN" id="B5Z-9b-f2q"/>
                         <outlet property="blocksWalkedTextField" destination="wRn-jv-UaI" id="qlF-eo-10d"/>
@@ -321,7 +321,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Metrocard Calc" id="UqM-QC-rHX"/>
+                    <tabBarItem key="tabBarItem" title="Metrocard Calc" image="Metrocard" id="UqM-QC-rHX"/>
                     <connections>
                         <outlet property="cardValueTextField" destination="QOW-Ld-Ufq" id="MPZ-CI-rii"/>
                         <outlet property="costTextField" destination="agZ-qf-0HW" id="TNf-Jp-nuS"/>
@@ -446,7 +446,7 @@ Powered by NewsAPI.org</string>
                             <constraint firstItem="iJw-Sy-7P9" firstAttribute="centerX" secondItem="7zX-M0-fD4" secondAttribute="centerX" id="YCW-WY-pH9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" id="xsD-Lw-pxQ"/>
+                    <tabBarItem key="tabBarItem" title="News" image="News" id="xsD-Lw-pxQ"/>
                     <connections>
                         <outlet property="newsTableView" destination="iJw-Sy-7P9" id="C2m-UH-4BY"/>
                     </connections>
@@ -476,4 +476,10 @@ Powered by NewsAPI.org</string>
             <point key="canvasLocation" x="-444" y="-473"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Metrocard" width="32" height="32"/>
+        <image name="News" width="32" height="32"/>
+        <image name="Steps" width="20" height="32"/>
+        <image name="Tips" width="32" height="32"/>
+    </resources>
 </document>
