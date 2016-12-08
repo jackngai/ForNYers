@@ -150,8 +150,10 @@ extension NewsClient {
                         articleObject.image = imageData as NSData?
                     }
                     
-                    // TODO: Doesn't seem to be saving properly according SQLite viewer
-                    // Need to troubleshoot why
+                    if let vc = self.appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
+                        vc.loadingIndicator.stopAnimating()
+                    }
+            
                     
                     do {
                         try context.save()
@@ -161,7 +163,7 @@ extension NewsClient {
                     }
                     
                 }
-                
+            
             })
             
             task.resume()
@@ -172,9 +174,10 @@ extension NewsClient {
         else {
             print("No internet connection")
 
-            //NewsViewController.present(alertController)
+
             if let vc = appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
                 vc.internetConnection = false
+                vc.loadingIndicator.stopAnimating()
             }
             
         }

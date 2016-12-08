@@ -27,15 +27,12 @@ class TipCalcViewController: UIViewController {
     var money:Money = 0
     var currentTip:Double = 0.0
     
+    let preferences = UserDefaults.standard
+    
     // MARK: View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let dUISegmentedControl = UISegmentedControl()
-        changeTipAmount(dUISegmentedControl)
-        
-        print("Tip = \(currentTip)")
-    
+
         // Call Calculate whenever user types a number, change tip percentage, or change # of persons
         // Learned from: http://stackoverflow.com/questions/28394933/how-do-i-check-when-a-uitextfield-changes
         // and: http://stackoverflow.com/questions/30545198/swift-handle-action-on-segmented-control
@@ -46,9 +43,20 @@ class TipCalcViewController: UIViewController {
         // Add delegate for billAmount textfield
         billAmount.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tipPercentage.selectedSegmentIndex = preferences.integer(forKey: "Default Tip")
+        changeTip()
+    }
 
     // MARK: Actions
     @IBAction func changeTipAmount(_ sender: UISegmentedControl) {
+        changeTip()
+    }
+    
+    // MARK: Methods
+    func changeTip(){
         switch tipPercentage.selectedSegmentIndex{
         case 0:
             currentTip = 10.0
@@ -69,7 +77,6 @@ class TipCalcViewController: UIViewController {
         }
     }
     
-    // MARK: Methods
     func calculate() {
         print(billAmount.text!)
         

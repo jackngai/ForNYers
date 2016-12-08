@@ -15,6 +15,8 @@ class NewsViewController: UIViewController {
 
     // MARK: Outlets
     @IBOutlet weak var newsTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     
     // MARK: Properties
     
@@ -40,9 +42,11 @@ class NewsViewController: UIViewController {
         
         // Get News from newsAPI Step 1: Call Get news and provide it the managed context
         // (Step 2 in NewsConvenience.swift)
-        
+        loadingIndicator.sizeToFit()
+        loadingIndicator.isHidden = false
         fetchedResultsController = NewsClient.sharedInstance().getNews(managed: context)
         
+
         fetchedResultsController.delegate = self
         
         newsTableView.dataSource = self
@@ -60,6 +64,8 @@ class NewsViewController: UIViewController {
             
             internetConnection = true
         }
+    
+
     }
     
     // MARK: Actions

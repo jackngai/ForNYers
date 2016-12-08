@@ -14,32 +14,38 @@ class StepsViewController: UIViewController {
     @IBOutlet weak var avesWalkedTextField: UITextField!
     @IBOutlet weak var totalStepsCalculated: UILabel!
     
+    var strideLength = 2.4
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        blocksWalkedTextField.text = "0"
-        avesWalkedTextField.text = "0"
-        
         blocksWalkedTextField.addTarget(self, action: #selector(calculateSteps), for: UIControlEvents.editingChanged)
         avesWalkedTextField.addTarget(self, action: #selector(calculateSteps), for: UIControlEvents.editingChanged)
         
         blocksWalkedTextField.delegate = self
         avesWalkedTextField.delegate = self
         
+        // MARK: Test code
+        print("stride length from settings: \(UserDefaults.standard.double(forKey: "Stride Length"))")
+        
+        if UserDefaults.standard.double(forKey: "Stride Length") != 0.0 {
+            strideLength = UserDefaults.standard.double(forKey: "Stride Length")
+        }
+        
     }
 
     func calculateSteps() {
         
         guard let blocksWalkedString = blocksWalkedTextField.text,
-            let blocksWalked = Double(blocksWalkedString),
-            let avesWalkedString = avesWalkedTextField.text,
-            let avesWalked = Double(avesWalkedString) else {
+            let avesWalkedString = avesWalkedTextField.text else {
                 return
         }
         
-        totalStepsCalculated.text = String(Int(((blocksWalked * 264.0) + (avesWalked * 900.0))/2.35))
-
+        let blocksWalked = Double(blocksWalkedString) ?? 0.0
+        let avesWalked = Double(avesWalkedString) ?? 0.0
+        
+        totalStepsCalculated.text = String(Int(((blocksWalked * 264.0) + (avesWalked * 900.0))/strideLength))
+        
     }
 
 

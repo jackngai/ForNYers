@@ -12,6 +12,7 @@
 		9811550A1DE8F01800AC53D3 /* NewsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981155091DE8F01800AC53D3 /* NewsClient.swift */; };
 		9811550C1DE8F0AD00AC53D3 /* NewsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811550B1DE8F0AD00AC53D3 /* NewsConstants.swift */; };
 		9811550E1DE939BA00AC53D3 /* NewsConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811550D1DE939BA00AC53D3 /* NewsConvenience.swift */; };
+		981257B81DF9B3D700181DA6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981257B71DF9B3D700181DA6 /* SettingsViewController.swift */; };
 		9812BFFF1DE5F30C00554FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812BFFE1DE5F30C00554FA4 /* AppDelegate.swift */; };
 		9812C0011DE5F30C00554FA4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C0001DE5F30C00554FA4 /* NewsViewController.swift */; };
 		9812C0041DE5F30C00554FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9812C0021DE5F30C00554FA4 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		981155091DE8F01800AC53D3 /* NewsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsClient.swift; sourceTree = "<group>"; };
 		9811550B1DE8F0AD00AC53D3 /* NewsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConstants.swift; sourceTree = "<group>"; };
 		9811550D1DE939BA00AC53D3 /* NewsConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsConvenience.swift; sourceTree = "<group>"; };
+		981257B71DF9B3D700181DA6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9812BFFB1DE5F30C00554FA4 /* ForNYers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForNYers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9812BFFE1DE5F30C00554FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9812C0001DE5F30C00554FA4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				9812C0001DE5F30C00554FA4 /* NewsViewController.swift */,
 				9812C0101DE5FAC500554FA4 /* TipCalcViewController.swift */,
 				9812C0141DE5FB1400554FA4 /* StepsViewController.swift */,
+				981257B71DF9B3D700181DA6 /* SettingsViewController.swift */,
 				9812C0121DE5FAFA00554FA4 /* MetroCardViewController.swift */,
 			);
 			name = Controller;
@@ -282,6 +285,7 @@
 				9812C0011DE5F30C00554FA4 /* NewsViewController.swift in Sources */,
 				9812BFFF1DE5F30C00554FA4 /* AppDelegate.swift in Sources */,
 				9812C0151DE5FB1400554FA4 /* StepsViewController.swift in Sources */,
+				981257B81DF9B3D700181DA6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
