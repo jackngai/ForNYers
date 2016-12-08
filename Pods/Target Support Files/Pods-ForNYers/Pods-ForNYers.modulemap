@@ -1,0 +1,6 @@
+framework module Pods_ForNYers {
+  umbrella header "Pods-ForNYers-umbrella.h"
+
+  export *
+  module * { export * }
+}

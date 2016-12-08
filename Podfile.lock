@@ -1,0 +1,23 @@
+PODS:
+  - Money (2.0.0):
+    - ValueCoding (~> 2)
+  - ReachabilitySwift (3)
+  - ValueCoding (2.1.0)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
+
+DEPENDENCIES:
+  - Money
+  - ReachabilitySwift (~> 3)
+  - XCGLogger (~> 4.0.0)
+
+SPEC CHECKSUMS:
+  Money: b2fdc19e2b73e4aeba55c398a805b6c61878bbfc
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  ValueCoding: f18cd2f0c941c43e06669717ca25aeed02d702a9
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+
+PODFILE CHECKSUM: 642fd565c1a311ebdb66a15da1f9675772862ac2
+
+COCOAPODS: 1.1.1
