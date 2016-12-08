@@ -6,80 +6,74 @@
 //  Copyright © 2016 Jack Ngai. All rights reserved.
 //
 
+// TODO: Remove calculate button by having the label "You need to refill at least $5.50 to get 11% bonus"
+
 import UIKit
+import Money
 
 class MetroCardViewController: UIViewController {
 
     
-    @IBOutlet weak var cardValueTextField: UITextField!
-    @IBOutlet weak var ridesTextField: UITextField!
-    @IBOutlet weak var costTextField: UITextField!
+    @IBOutlet weak var currentValueTextField: UITextField!
+    @IBOutlet weak var finalValueTextField: UITextField!
+    @IBOutlet weak var costField: UILabel!
+    @IBOutlet weak var savingsField: UILabel!
+    @IBOutlet weak var bonusLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        currentValueTextField.delegate = self
+        finalValueTextField.delegate = self
+        
+        currentValueTextField.addTarget(self, action: #selector(calculate), for: UIControlEvents.editingChanged)
+        finalValueTextField.addTarget(self, action: #selector(calculate), for: UIControlEvents.editingChanged)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func calculate(_ sender: UIButton) {
+    @IBAction func calculate() {
         
-        let cardValueString = cardValueTextField.text ?? "0"
-        
-        guard let cardValue = Double(cardValueString),
-            let ridesString = ridesTextField.text,
-            let rides = Double(ridesString) else {
-                print("Invalid Current Card Value field and/or Number of Rides")
-                return
+        guard let finalValueString = finalValueTextField.text, let finalValueDouble = Double(finalValueString) else {
+            print("Invalid Final Value")
+            return
         }
         
-        var ridesCost = (2.75 * rides) - cardValue
+        let finalValue = Money(finalValueDouble)
         
-        if ridesCost < 0 {
-            //let availableRides = Int(cardValue / 2.75)
-            let alertController = UIAlertController(title: "Hmm...", message: "Your card value has enough for the number of rides you need. Did you mean to add that number of rides to the card?", preferredStyle: .alert)
-            let yesAction = UIAlertAction(title: "Yes, please.", style: .default) {
-                _ in
-                ridesCost = (2.75 * rides)
-                self.costTextField.text = String(ridesCost)
+        var currentValue:Money = 0.0
+        
+        if currentValueTextField.text != nil || currentValueTextField.text != "" {
+            if let currentValueString = currentValueTextField.text{
+                if let currentValueDouble = Double(currentValueString){
+                    currentValue = Money(currentValueDouble)
+                }
             }
-            let reEnterAction = UIAlertAction(title: "No, let me re-enter", style: .destructive) {
-                _ in
-                self.ridesTextField.text = ""
-            }
-            alertController.addAction(yesAction)
-            alertController.addAction(reEnterAction)
-            present(alertController, animated: true, completion: nil)
         }
         
+        let calculatedValue = finalValue - currentValue
         
-        if ridesCost >= 5.50 {
-            costTextField.text = String(ridesCost * 0.9009)
+        if calculatedValue < 5.50 {
+            bonusLabel.isHidden = false
+            costField.text = String(describing: calculatedValue)
+            savingsField.text = "$0.00"
         } else {
-            let alertController = UIAlertController(title: "Warning", message: "You are refilling less than $5.50 and will not get the 11% bonus.", preferredStyle: .alert)
-            let continueAction = UIAlertAction(title: "I'm aware", style: .destructive) {
-                _ in
-                self.costTextField.text = String(ridesCost)
-            }
-            let reEnterAction = UIAlertAction(title: "Let me re-enter", style: .cancel) {
-                _ in
-                self.ridesTextField.text = ""
-            }
-            alertController.addAction(continueAction)
-            alertController.addAction(reEnterAction)
-            present(alertController, animated: true, completion: nil)
+            bonusLabel.isHidden = true
+            costField.text = String(describing: calculatedValue * 0.90091)
+            savingsField.text = String(describing: calculatedValue * 0.09909)
         }
-
-    
         
     }
-
-
 
 }
- 
+
+extension MetroCardViewController:UITextFieldDelegate{
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        costField.text = ""
+        savingsField.text = ""
+        bonusLabel.isHidden = true
+        return true
+    }
+}
