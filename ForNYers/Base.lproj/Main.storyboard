@@ -59,6 +59,7 @@
                                     <segment title="25%"/>
                                     <segment title="30%"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="changeTipAmount:" destination="tle-MW-2jc" eventType="valueChanged" id="TGX-CU-nuc"/>
                                 </connections>
@@ -103,6 +104,7 @@
                                     <segment title="8"/>
                                     <segment title="9"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEO-QM-Pcf">
                                 <rect key="frame" x="16" y="217" width="62" height="28"/>
@@ -129,10 +131,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-Go-bPs">
-                                <rect key="frame" x="334" y="26" width="25" height="25"/>
+                                <rect key="frame" x="337" y="26" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="GbB-Mo-IT9"/>
-                                    <constraint firstAttribute="height" constant="25" id="kPe-mL-lUY"/>
+                                    <constraint firstAttribute="width" constant="22" id="GbB-Mo-IT9"/>
+                                    <constraint firstAttribute="height" constant="22" id="kPe-mL-lUY"/>
                                 </constraints>
                                 <state key="normal" image="Settings"/>
                                 <connections>
@@ -277,10 +279,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwY-yg-tZU">
-                                <rect key="frame" x="334" y="26" width="25" height="25"/>
+                                <rect key="frame" x="337" y="26" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="d4j-ds-FoZ"/>
-                                    <constraint firstAttribute="width" constant="25" id="zn1-C7-SHG"/>
+                                    <constraint firstAttribute="height" constant="22" id="d4j-ds-FoZ"/>
+                                    <constraint firstAttribute="width" constant="22" id="zn1-C7-SHG"/>
                                 </constraints>
                                 <state key="normal" image="Settings"/>
                                 <connections>
@@ -419,10 +421,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7e-l1-a5y">
-                                <rect key="frame" x="334" y="26" width="25" height="25"/>
+                                <rect key="frame" x="337" y="26" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="PEx-BG-WlH"/>
-                                    <constraint firstAttribute="height" constant="25" id="r3O-MS-usz"/>
+                                    <constraint firstAttribute="width" constant="22" id="PEx-BG-WlH"/>
+                                    <constraint firstAttribute="height" constant="22" id="r3O-MS-usz"/>
                                 </constraints>
                                 <state key="normal" image="Settings"/>
                                 <connections>
@@ -584,10 +586,10 @@ Powered by NewsAPI.org</string>
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPA-4B-CXf">
-                                <rect key="frame" x="333" y="26" width="25" height="25"/>
+                                <rect key="frame" x="336" y="26" width="22" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="LgZ-Zk-D9s"/>
-                                    <constraint firstAttribute="height" constant="25" id="R0c-C3-F6Q"/>
+                                    <constraint firstAttribute="width" constant="22" id="LgZ-Zk-D9s"/>
+                                    <constraint firstAttribute="height" constant="22" id="R0c-C3-F6Q"/>
                                 </constraints>
                                 <state key="normal" image="Settings"/>
                                 <connections>
@@ -668,7 +670,9 @@ Powered by NewsAPI.org</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-M3-B52">
                                 <rect key="frame" x="325" y="23" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="okAction:" destination="Yit-3Z-SVj" eventType="touchUpInside" id="pYf-2D-nGj"/>
                                 </connections>
@@ -687,6 +691,7 @@ Powered by NewsAPI.org</string>
                                     <segment title="25%"/>
                                     <segment title="30%"/>
                                 </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="changeDefaultTipAction:" destination="Yit-3Z-SVj" eventType="valueChanged" id="JGM-RT-u2m"/>
                                 </connections>
@@ -705,6 +710,7 @@ Powered by NewsAPI.org</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="qYA-IH-Fg1"/>
                                 </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <action selector="stepperAction:" destination="Yit-3Z-SVj" eventType="valueChanged" id="eqE-JT-l2R"/>
                                 </connections>

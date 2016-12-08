@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Change the default tab: http://stackoverflow.com/questions/30886360/set-the-second-tab-as-default-tab-in-swift/
         if window?.rootViewController as? UITabBarController != nil {
             let tabBarController = window!.rootViewController as! UITabBarController
+            tabBarController.tabBar.tintColor = .black
             tabBarController.selectedIndex = preferences.integer(forKey: "Default Tab")
         }
         // End test code
