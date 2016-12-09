@@ -62,6 +62,7 @@ class NewsViewController: UIViewController {
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
             
+            // Show the alert only once instead of every time the user opens the view
             internetConnection = true
         }
     
@@ -106,7 +107,6 @@ extension NewsViewController {
     
 }
 
-// MARK: UITableViewDelegate
 extension NewsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,8 +130,8 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     
+    // Open the full article in Safari when the user taps on the article
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Open the URL for the selected item in a another view
         
         let newsItem = fetchedResultsController.object(at: indexPath)
         
@@ -139,6 +139,7 @@ extension NewsViewController: UITableViewDelegate {
     }
     
 }
+
 
 extension NewsViewController: NSFetchedResultsControllerDelegate {
     
@@ -164,23 +165,7 @@ extension NewsViewController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         newsTableView.endUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        
-        let indexSet = IndexSet(integer: sectionIndex)
-        
-        switch type {
-        case .insert:
-            newsTableView.insertSections(indexSet, with: .automatic)
-        case .delete:
-            newsTableView.deleteSections(indexSet, with: .automatic)
-        default:
-            break
-        }
-        
-    }
-    
+    }    
 }
 
 

@@ -6,14 +6,13 @@
 //  Copyright © 2016 Jack Ngai. All rights reserved.
 //
 
-// TODO: Remove calculate button by having the label "You need to refill at least $5.50 to get 11% bonus"
 
 import UIKit
 import Money
 
 class MetroCardViewController: UIViewController {
 
-    
+    // MARK: Outlets
     @IBOutlet weak var currentValueTextField: UITextField!
     @IBOutlet weak var finalValueTextField: UITextField!
     @IBOutlet weak var costField: UILabel!
@@ -21,7 +20,7 @@ class MetroCardViewController: UIViewController {
     @IBOutlet weak var bonusLabel: UILabel!
     
     
-    
+    // MARK: View Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,8 +32,14 @@ class MetroCardViewController: UIViewController {
         
     }
 
+    // MARK: Actions
+    @IBAction func singleTap(_ sender: UITapGestureRecognizer) {
+        currentValueTextField.resignFirstResponder()
+        finalValueTextField.resignFirstResponder()
+    }
     
-    @IBAction func calculate() {
+    // MARK: Methods
+    func calculate() {
         
         guard let finalValueString = finalValueTextField.text, let finalValueDouble = Double(finalValueString) else {
             print("Invalid Final Value")
@@ -55,6 +60,11 @@ class MetroCardViewController: UIViewController {
         
         let calculatedValue = finalValue - currentValue
         
+        guard calculatedValue > 0 else {
+            print("Final Value less than current Value.")
+            return
+        }
+        
         if calculatedValue < 5.50 {
             bonusLabel.isHidden = false
             costField.text = String(describing: calculatedValue)
@@ -64,12 +74,13 @@ class MetroCardViewController: UIViewController {
             costField.text = String(describing: calculatedValue * 0.90091)
             savingsField.text = String(describing: calculatedValue * 0.09909)
         }
-        
     }
-
+    
 }
 
 extension MetroCardViewController:UITextFieldDelegate{
+    
+    // Clear the cost and saving labels and hide the warning label when user clears a text field 
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         costField.text = ""
         savingsField.text = ""

@@ -118,9 +118,9 @@ extension NewsClient {
                     return
                 }
                 
-                // MARK: Test Code
+                // MARK: Debug Code
                 print("Total articles: \(articlesArray.count)")
-                // End Test Code
+                // End Debug Code
                 
                 
                 context.perform {
@@ -174,7 +174,7 @@ extension NewsClient {
         else {
             print("No internet connection")
 
-
+            // Notify the NewsViewController to show the alert that there's no internet connection
             if let vc = appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
                 vc.internetConnection = false
                 vc.loadingIndicator.stopAnimating()

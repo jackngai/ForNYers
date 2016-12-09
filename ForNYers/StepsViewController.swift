@@ -10,12 +10,15 @@ import UIKit
 
 class StepsViewController: UIViewController {
 
+    // MARK: Oulets
     @IBOutlet weak var blocksWalkedTextField: UITextField!
     @IBOutlet weak var avesWalkedTextField: UITextField!
     @IBOutlet weak var totalStepsCalculated: UILabel!
     
+    // MARK: Properties
     var strideLength = 2.4
     
+    // MARK: View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,15 +28,25 @@ class StepsViewController: UIViewController {
         blocksWalkedTextField.delegate = self
         avesWalkedTextField.delegate = self
         
-        // MARK: Test code
+        // MARK: Debug code
         print("stride length from settings: \(UserDefaults.standard.double(forKey: "Stride Length"))")
+        // End Debug code
         
         if UserDefaults.standard.double(forKey: "Stride Length") != 0.0 {
             strideLength = UserDefaults.standard.double(forKey: "Stride Length")
         }
         
     }
-
+    
+    // MARK: Actions
+    
+    // Hide keyboard when user taps anywhere else on the screen
+    @IBAction func singleTap(_ sender: UITapGestureRecognizer) {
+        blocksWalkedTextField.resignFirstResponder()
+        avesWalkedTextField.resignFirstResponder()
+    }
+    
+    // MARK: Methods
     func calculateSteps() {
         
         guard let blocksWalkedString = blocksWalkedTextField.text,
@@ -52,6 +65,7 @@ class StepsViewController: UIViewController {
 }
 
 extension StepsViewController:UITextFieldDelegate{
+    // Clear the total steps label when user clears any text field
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         totalStepsCalculated.text = ""
         return true

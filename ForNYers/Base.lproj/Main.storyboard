@@ -143,6 +143,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="h9h-oc-qOe" firstAttribute="top" secondItem="hfb-rW-mIs" secondAttribute="bottom" constant="10" id="1uV-0o-oWz"/>
                             <constraint firstItem="XaL-GV-RwZ" firstAttribute="trailing" secondItem="yEx-FJ-w3N" secondAttribute="trailingMargin" id="2Cr-cL-24d"/>
@@ -181,6 +182,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="bgE-Go-bPs" secondAttribute="trailing" id="wCj-gg-Qea"/>
                             <constraint firstItem="WYL-Gw-hYS" firstAttribute="centerX" secondItem="yEx-FJ-w3N" secondAttribute="centerX" id="yF4-IJ-eUK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6sK-jS-qZG" appends="YES" id="6jn-dh-9DX"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tip Calc" image="Tips" id="1uT-Xl-Izz"/>
                     <connections>
@@ -193,6 +197,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1E-V6-Fqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6sK-jS-qZG">
+                    <connections>
+                        <action selector="singleTap:" destination="tle-MW-2jc" id="lGd-Bk-lq9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="508" y="-145.27736131934034"/>
         </scene>
@@ -230,7 +239,7 @@
                                                 <rect key="frame" x="123.5" y="0.0" width="229" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -247,7 +256,7 @@
                                                 <rect key="frame" x="142" y="0.0" width="210.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -291,6 +300,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="uwY-yg-tZU" firstAttribute="top" secondItem="phz-Cn-poj" secondAttribute="bottom" constant="6" id="Dri-A9-kUF"/>
                             <constraint firstItem="NN1-wU-a1T" firstAttribute="centerX" secondItem="v00-aC-Rg9" secondAttribute="centerX" id="ECq-OJ-YUB"/>
@@ -300,6 +310,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uwY-yg-tZU" secondAttribute="trailing" id="bjI-jc-fzX"/>
                             <constraint firstItem="8Pg-pH-2rq" firstAttribute="trailing" secondItem="v00-aC-Rg9" secondAttribute="trailingMargin" id="lcX-aA-4hs"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cik-LI-IFU" appends="YES" id="jav-CU-vUo"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Steps Calc" image="Steps" id="oAu-Ue-Kfb"/>
                     <connections>
@@ -309,6 +322,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QxZ-Xb-drO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cik-LI-IFU">
+                    <connections>
+                        <action selector="singleTap:" destination="m1p-45-X2h" id="klG-pO-9cD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-927.20000000000005" y="295.50224887556226"/>
         </scene>
@@ -343,7 +361,7 @@
                                 <rect key="frame" x="174" y="97" width="185" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Card Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ae-SK-rhi">
                                 <rect key="frame" x="16" y="135" width="128" height="30"/>
@@ -358,7 +376,7 @@
                                 <rect key="frame" x="151" y="135" width="208" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="You need:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9G-xZ-ZkQ">
                                 <rect key="frame" x="15" y="173" width="76" height="30"/>
@@ -433,6 +451,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="nzD-yj-b6b" secondAttribute="leading" id="0IF-ud-hbl"/>
                             <constraint firstItem="UmE-dT-cLe" firstAttribute="centerX" secondItem="U7P-tV-yFQ" secondAttribute="centerX" id="1CX-Gl-2Ba"/>
@@ -466,6 +485,9 @@
                             <constraint firstItem="um7-h5-dOy" firstAttribute="top" secondItem="W9G-xZ-ZkQ" secondAttribute="bottom" constant="8" id="wVe-vS-RkO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nzD-yj-b6b" secondAttribute="trailing" id="zG0-lN-NC3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5bd-pu-fXZ" appends="YES" id="rMZ-nN-FoT"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Metrocard Calc" image="Metrocard" id="UqM-QC-rHX"/>
                     <connections>
@@ -477,6 +499,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P63-Id-6RS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5bd-pu-fXZ">
+                    <connections>
+                        <action selector="singleTap:" destination="6Wf-Pe-4oq" id="Xnf-Wa-qVf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-226.40000000000001" y="300"/>
         </scene>
@@ -669,8 +696,8 @@ Powered by NewsAPI.org</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-M3-B52">
-                                <rect key="frame" x="325" y="23" width="34" height="30"/>
-                                <state key="normal" title="Save">
+                                <rect key="frame" x="322" y="23" width="37" height="30"/>
+                                <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -783,6 +810,6 @@ Powered by NewsAPI.org</string>
         <image name="Tips" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="plK-XV-bVG"/>
+        <segue reference="NNQ-6G-BcU"/>
     </inferredMetricsTieBreakers>
 </document>

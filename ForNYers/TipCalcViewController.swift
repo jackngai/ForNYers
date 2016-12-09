@@ -6,8 +6,6 @@
 //  Copyright © 2016 Jack Ngai. All rights reserved.
 //
 
-// TODO: Add segment control to divide by 2 - 9 persons
-// TODO: Load default tip percentage from NSUserDefaults
 
 import UIKit
 import Money
@@ -51,6 +49,11 @@ class TipCalcViewController: UIViewController {
     }
 
     // MARK: Actions
+    @IBAction func singleTap(_ sender: UITapGestureRecognizer) {
+        billAmount.resignFirstResponder()
+    }
+    
+    
     @IBAction func changeTipAmount(_ sender: UISegmentedControl) {
         changeTip()
     }
@@ -79,6 +82,10 @@ class TipCalcViewController: UIViewController {
     
     func calculate() {
         print(billAmount.text!)
+        
+        // This doesn't remove commas and periods. Need to investigate further
+        //billAmount.text = billAmount.text?.trimmingCharacters(in: CharacterSet(charactersIn: "$.,"))
+        
         
         billAmount.text = billAmount.text?.replacingOccurrences(of: "$", with: "")
         billAmount.text = billAmount.text?.replacingOccurrences(of: ".", with: "")
@@ -114,6 +121,8 @@ class TipCalcViewController: UIViewController {
 }
 
 extension TipCalcViewController: UITextFieldDelegate {
+    
+    // Clear tip amount, total amount, and per person total labels and de-select number of persons segmented control
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         tipAmount.text = ""
         totalAmount.text = ""

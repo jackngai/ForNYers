@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    // MARK: Outlets
     @IBOutlet weak var defaultTabPicker: UIPickerView!
     @IBOutlet weak var defaultTipSegmentedControl: UISegmentedControl!
     
@@ -17,13 +18,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var strideLength: UILabel!
     
+    // MARK: Properties
     // Learned setting up picker view from: http://codewithchris.com/uipickerview-example/
     var tabPickerData: [String] = []
     
     let preferences = UserDefaults.standard
     
     
-
+    // MARK: View Lifecylce Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,10 +49,10 @@ class SettingsViewController: UIViewController {
             stepper.value = preferences.double(forKey: "Stride Length")
         }
         strideLength.text = "\(stepper.value)"
-        
-
+    
     }
 
+    // MARK: Actions
     @IBAction func stepperAction(_ sender: UIStepper) {
         strideLength.text = "\(stepper.value)"
         print("stepper value: \(stepper.value)")
@@ -88,6 +90,7 @@ extension SettingsViewController: UIPickerViewDelegate {
         return tabPickerData[row]
     }
     
+    // Saves the default tab selection to UserDefaults
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(tabPickerData[row])
         
