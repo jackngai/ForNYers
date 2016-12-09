@@ -28,6 +28,11 @@ class StepsViewController: UIViewController {
         blocksWalkedTextField.delegate = self
         avesWalkedTextField.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         // MARK: Debug code
         print("stride length from settings: \(UserDefaults.standard.double(forKey: "Stride Length"))")
         // End Debug code
