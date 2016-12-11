@@ -82,7 +82,7 @@ extension NewsClient {
     }
     
     func getNews(managed context: NSManagedObjectContext)->NSFetchedResultsController<Article>{
-        
+    
         let reachability = startReachability()
         
         
@@ -121,8 +121,7 @@ extension NewsClient {
                 // MARK: Debug Code
                 print("Total articles: \(articlesArray.count)")
                 // End Debug Code
-                
-                
+            
                 context.perform {
                     
 
@@ -145,14 +144,13 @@ extension NewsClient {
                         guard let imageURL = URL(string: article["urlToImage"] as? String ?? ""),
                             let imageData = try? Data(contentsOf: imageURL) else {
                                 print("Unable to process url into image")
-                                fatalError("Unable to process url into image")
+                                Helper.showAlert(title: "No Internet Connection", message: "Connection lost while downloading image")
+                                return
                         }
                         articleObject.image = imageData as NSData?
                     }
                     
-                    if let vc = self.appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
-                        vc.loadingIndicator.stopAnimating()
-                    }
+                    Helper.hideActivityIndicator()
             
                     
                     do {
@@ -161,7 +159,7 @@ extension NewsClient {
                     } catch let error as NSError {
                         print("Unable to save \(error), \(error.userInfo)")
                     }
-                    
+                
                 }
             
             })
@@ -169,16 +167,13 @@ extension NewsClient {
             task.resume()
             
             return self.fillFRC(managed: context)
+
             
         }
         else {
             print("No internet connection")
-
-            // Notify the NewsViewController to show the alert that there's no internet connection
-            if let vc = appDelegate.window?.rootViewController?.childViewControllers[0] as? NewsViewController {
-                vc.internetConnection = false
-                vc.loadingIndicator.stopAnimating()
-            }
+            Helper.showAlert(title: "No Internet Connection", message: "Displaying articles from the most recent download.")
+            
             
         }
     

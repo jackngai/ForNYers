@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
     let preferences = UserDefaults.standard
     
     
-    // MARK: View Lifecylce Methods
+    // MARK: View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         

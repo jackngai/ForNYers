@@ -36,9 +36,8 @@ class CoreDataStack {
         if context.hasChanges {
             do {
                 try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            } catch let error as NSError{
+                print("Error while saving: \(error), \(error.userInfo)")
             }
         } else {
             print("%% In saveContext. No changes detected. Save cancelled.")

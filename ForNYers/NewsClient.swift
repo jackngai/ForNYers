@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReachabilitySwift
 
 class NewsClient: NSObject {
     
@@ -33,7 +34,11 @@ class NewsClient: NSObject {
             data, response, error in
             
             guard error == nil else {
-                print("Received error at startTask method. Error: \(error)")
+                if let error = error as? NSError{
+                    print("Received error at startTask method. Error: \(error.localizedDescription)")
+                    Helper.showAlert(title: "Internet Connection Error", message: error.localizedDescription)
+                    
+                }
                 return
             }
             

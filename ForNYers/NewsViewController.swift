@@ -28,8 +28,6 @@ class NewsViewController: UIViewController {
     
     var fetchedResultsController: NSFetchedResultsController<Article>!
     
-    var internetConnection = true
-    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,38 +41,17 @@ class NewsViewController: UIViewController {
         // Get News from newsAPI Step 1: Call Get news and provide it the managed context
         // (Step 2 in NewsConvenience.swift)
         loadingIndicator.sizeToFit()
-        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
         fetchedResultsController = NewsClient.sharedInstance().getNews(managed: context)
         
-
         fetchedResultsController.delegate = self
         
         newsTableView.dataSource = self
         newsTableView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        if !internetConnection{
-            let alertController = UIAlertController(title: "No Internet Connection", message: "Displaying articles from the most recent download.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(action)
-            present(alertController, animated: true, completion: nil)
-            
-            // Show the alert only once instead of every time the user opens the view
-            internetConnection = true
-        }
-    
 
     }
-    
-    // MARK: Actions
-    @IBAction func reload(_ sender: Any) {
-        newsTableView.reloadData()
-        
-    }
-    
+
     
 }
 
@@ -144,6 +121,7 @@ extension NewsViewController: UITableViewDelegate {
 extension NewsViewController: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("Begin updates")
         newsTableView.beginUpdates()
     }
 
