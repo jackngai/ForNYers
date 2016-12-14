@@ -82,10 +82,7 @@ class TipCalcViewController: UIViewController {
     
     func calculate() {
         print(billAmount.text!)
-        
-        // This doesn't remove commas and periods. Need to investigate further
-        //billAmount.text = billAmount.text?.trimmingCharacters(in: CharacterSet(charactersIn: "$.,"))
-        
+
         
         billAmount.text = billAmount.text?.replacingOccurrences(of: "$", with: "")
         billAmount.text = billAmount.text?.replacingOccurrences(of: ".", with: "")
