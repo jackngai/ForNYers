@@ -83,6 +83,8 @@ class TipCalcViewController: UIViewController {
     func calculate() {
         print(billAmount.text!)
 
+        // TODO: Look into using money.decimal to refactor and eliminate the 
+        // need to use replacingOccurences 3x
         
         billAmount.text = billAmount.text?.replacingOccurrences(of: "$", with: "")
         billAmount.text = billAmount.text?.replacingOccurrences(of: ".", with: "")
