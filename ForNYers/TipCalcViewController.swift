@@ -100,6 +100,7 @@ class TipCalcViewController: UIViewController {
         }
         
         money = Money(minorUnits: intBillAmount)
+        print("money in decimal: \(money.decimal)")
         billAmount.text = String(describing: money)
         
         let tip = (money * currentTip) / 100
