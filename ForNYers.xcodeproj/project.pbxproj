@@ -24,6 +24,7 @@
 		9812C0151DE5FB1400554FA4 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9812C0141DE5FB1400554FA4 /* StepsViewController.swift */; };
 		98172D141DE9E5020026A4D6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98172D131DE9E5020026A4D6 /* CoreDataStack.swift */; };
 		98172D171DE9E5800026A4D6 /* ForNYers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98172D151DE9E5800026A4D6 /* ForNYers.xcdatamodeld */; };
+		984149FF1E1C14F300C5F039 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984149FE1E1C14F300C5F039 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		9812C0141DE5FB1400554FA4 /* StepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		98172D131DE9E5020026A4D6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		98172D161DE9E5800026A4D6 /* ForNYers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ForNYers.xcdatamodel; sourceTree = "<group>"; };
+		984149FE1E1C14F300C5F039 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		99E5BB49605BD9A2410E9B24 /* Pods-ForNYers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForNYers.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForNYers/Pods-ForNYers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		9812BFFD1DE5F30C00554FA4 /* ForNYers */ = {
 			isa = PBXGroup;
 			children = (
+				984149FE1E1C14F300C5F039 /* ToDo.swift */,
 				98172D121DE9E4DE0026A4D6 /* Model */,
 				98172D0F1DE9E4AA0026A4D6 /* Controller */,
 				98172D101DE9E4C60026A4D6 /* View */,
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9811550C1DE8F0AD00AC53D3 /* NewsConstants.swift in Sources */,
+				984149FF1E1C14F300C5F039 /* ToDo.swift in Sources */,
 				98063AF71DF0A6B500E1184A /* NewsTableViewCell.swift in Sources */,
 				9812C0131DE5FAFA00554FA4 /* MetroCardViewController.swift in Sources */,
 				9811550E1DE939BA00AC53D3 /* NewsConvenience.swift in Sources */,
