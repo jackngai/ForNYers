@@ -68,8 +68,11 @@ class SettingsViewController: UIViewController {
         preferences.set(defaultTipSegmentedControl.selectedSegmentIndex, forKey: "Default Tip")
     }
     
+    @IBAction func tappedStrideInfoButton(_ sender: UIButton) {
+        
+        Helper.showAlert(title: "Stride Length", message: "Stride length is the distance between each step. The average stride length is 2.2 feet for women and 2.5 feet for men. To calculate your own stride length, walk 10 steps, measure the distance, divide it by 10.", from: self)
+    }
     
-
 }
 
 extension SettingsViewController: UIPickerViewDataSource {

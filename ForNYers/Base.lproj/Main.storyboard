@@ -53,7 +53,7 @@
                                 <segments>
                                     <segment title="10%"/>
                                     <segment title="15%"/>
-                                    <segment title="17.75%"/>
+                                    <segment title="2x Tax"/>
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                     <segment title="25%"/>
@@ -743,6 +743,13 @@ Powered by NewsAPI.org</string>
                                     <action selector="stepperAction:" destination="Yit-3Z-SVj" eventType="valueChanged" id="eqE-JT-l2R"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scr-FP-4GB">
+                                <rect key="frame" x="229" y="437" width="63" height="29"/>
+                                <state key="normal" title="Info" image="Info"/>
+                                <connections>
+                                    <action selector="tappedStrideInfoButton:" destination="Yit-3Z-SVj" eventType="touchUpInside" id="ViN-9q-ZRt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -759,6 +766,7 @@ Powered by NewsAPI.org</string>
                             <constraint firstAttribute="leadingMargin" secondItem="bW3-pA-Pi3" secondAttribute="leading" id="M6i-yb-gKb"/>
                             <constraint firstItem="Sja-6u-BZ7" firstAttribute="top" secondItem="gnR-Ma-umX" secondAttribute="bottom" constant="8" id="MNC-8Q-pPx"/>
                             <constraint firstItem="Eoc-We-eDn" firstAttribute="height" secondItem="11R-OI-noB" secondAttribute="height" id="Par-Nv-ndp"/>
+                            <constraint firstItem="scr-FP-4GB" firstAttribute="height" secondItem="11R-OI-noB" secondAttribute="height" id="Sqb-dA-gmI"/>
                             <constraint firstItem="Eoc-We-eDn" firstAttribute="top" secondItem="XvK-z5-JeX" secondAttribute="bottom" constant="10" id="Sw9-fK-EJo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mRX-kU-xlR" secondAttribute="trailing" constant="76" id="WyG-r8-oCh"/>
                             <constraint firstItem="mRX-kU-xlR" firstAttribute="top" secondItem="Sja-6u-BZ7" secondAttribute="bottom" constant="10" id="XAz-cq-PnX"/>
@@ -767,6 +775,8 @@ Powered by NewsAPI.org</string>
                             <constraint firstItem="bW3-pA-Pi3" firstAttribute="top" secondItem="s0c-T5-PAA" secondAttribute="bottom" constant="10" id="ggw-4D-qJk"/>
                             <constraint firstItem="XvK-z5-JeX" firstAttribute="leading" secondItem="Uvy-MR-rOr" secondAttribute="leadingMargin" id="hmE-HN-LSd"/>
                             <constraint firstItem="XvK-z5-JeX" firstAttribute="height" secondItem="Uvy-MR-rOr" secondAttribute="height" multiplier="1:12" id="imm-37-eL0"/>
+                            <constraint firstItem="scr-FP-4GB" firstAttribute="top" secondItem="XvK-z5-JeX" secondAttribute="bottom" constant="10" id="kDk-1S-hEf"/>
+                            <constraint firstItem="scr-FP-4GB" firstAttribute="leading" secondItem="Eoc-We-eDn" secondAttribute="trailing" constant="8" id="oBq-dd-uue"/>
                             <constraint firstItem="s0c-T5-PAA" firstAttribute="height" secondItem="Uvy-MR-rOr" secondAttribute="height" multiplier="1:12" id="oD6-nq-Ll9"/>
                             <constraint firstItem="s0c-T5-PAA" firstAttribute="leading" secondItem="Uvy-MR-rOr" secondAttribute="leadingMargin" id="oUh-P2-TAE"/>
                             <constraint firstItem="11R-OI-noB" firstAttribute="leading" secondItem="Uvy-MR-rOr" secondAttribute="leadingMargin" id="oYw-VX-1bC"/>
@@ -812,6 +822,7 @@ Powered by NewsAPI.org</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Info" width="32" height="32"/>
         <image name="MVM" width="498" height="750"/>
         <image name="Metrocard" width="32" height="32"/>
         <image name="News" width="32" height="32"/>
@@ -822,6 +833,6 @@ Powered by NewsAPI.org</string>
         <image name="Walking" width="1061" height="1286"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="plK-XV-bVG"/>
+        <segue reference="uOw-1S-Z8s"/>
     </inferredMetricsTieBreakers>
 </document>

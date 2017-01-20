@@ -20,6 +20,7 @@ class Helper:UIViewController{
         guard let keyWindow = UIApplication.shared.keyWindow?.rootViewController else {
             return
         }
+        
         DispatchQueue.main.async {
             keyWindow.present(alertController, animated: true)
             if let vc = keyWindow.childViewControllers[0] as? NewsViewController {
@@ -27,6 +28,14 @@ class Helper:UIViewController{
             }
             
         }
+    }
+    
+    internal static func showAlert(title alertTitle: String, message alertMessage: String, from viewController: UIViewController) {
+        alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Okay", style: .default)
+        alertController.addAction(action)
+        viewController.present(alertController, animated: true)
+        
     }
     
     internal static func hideActivityIndicator() {
