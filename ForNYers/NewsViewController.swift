@@ -49,8 +49,13 @@ class NewsViewController: UIViewController {
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
-
     }
+    
+    @IBAction func tappedNewsAPIbutton(_ sender: UIButton) {
+        
+        UIApplication.shared.open(URL(string: "https://www.newsapi.org")!)
+    }
+    
 
     
 }

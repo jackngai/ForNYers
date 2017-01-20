@@ -46,6 +46,8 @@ class MetroCardViewController: UIViewController {
             return
         }
         
+    
+        
         let finalValue = Money(finalValueDouble)
         
         var currentValue:Money = 0.0
