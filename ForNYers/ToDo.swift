@@ -9,9 +9,7 @@
 /*
 
 
- - In Settings view, add pop-up message to explain stride settings
  - Add credits to icons
-
 
  
 */
