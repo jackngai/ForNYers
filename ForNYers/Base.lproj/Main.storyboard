@@ -830,6 +830,10 @@ Additional icons provided by Github
                                     <action selector="tappedStrideInfoButton:" destination="Yit-3Z-SVj" eventType="touchUpInside" id="ViN-9q-ZRt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC7-mB-p41">
+                                <rect key="frame" x="288" y="23" width="32" height="32"/>
+                                <state key="normal" image="Info"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -843,11 +847,13 @@ Additional icons provided by Github
                             <constraint firstItem="mRX-kU-xlR" firstAttribute="height" secondItem="Uvy-MR-rOr" secondAttribute="height" multiplier="1:12" id="Cgt-54-3bK"/>
                             <constraint firstItem="TAn-M3-B52" firstAttribute="top" secondItem="gnR-Ma-umX" secondAttribute="bottom" constant="3" id="FYy-mo-pg0"/>
                             <constraint firstItem="11R-OI-noB" firstAttribute="top" secondItem="XvK-z5-JeX" secondAttribute="bottom" constant="10" id="Hwt-GU-0IN"/>
+                            <constraint firstItem="TAn-M3-B52" firstAttribute="leading" secondItem="oC7-mB-p41" secondAttribute="trailing" constant="2" id="LP5-43-isJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="bW3-pA-Pi3" secondAttribute="leading" id="M6i-yb-gKb"/>
                             <constraint firstItem="Sja-6u-BZ7" firstAttribute="top" secondItem="gnR-Ma-umX" secondAttribute="bottom" constant="8" id="MNC-8Q-pPx"/>
                             <constraint firstItem="Eoc-We-eDn" firstAttribute="height" secondItem="11R-OI-noB" secondAttribute="height" id="Par-Nv-ndp"/>
                             <constraint firstItem="scr-FP-4GB" firstAttribute="height" secondItem="11R-OI-noB" secondAttribute="height" id="Sqb-dA-gmI"/>
                             <constraint firstItem="Eoc-We-eDn" firstAttribute="top" secondItem="XvK-z5-JeX" secondAttribute="bottom" constant="10" id="Sw9-fK-EJo"/>
+                            <constraint firstItem="oC7-mB-p41" firstAttribute="top" secondItem="gnR-Ma-umX" secondAttribute="bottom" constant="3" id="Sxy-ja-aiB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mRX-kU-xlR" secondAttribute="trailing" constant="76" id="WyG-r8-oCh"/>
                             <constraint firstItem="mRX-kU-xlR" firstAttribute="top" secondItem="Sja-6u-BZ7" secondAttribute="bottom" constant="10" id="XAz-cq-PnX"/>
                             <constraint firstItem="TAn-M3-B52" firstAttribute="trailing" secondItem="Uvy-MR-rOr" secondAttribute="trailingMargin" id="Xgq-TK-IGU"/>
@@ -878,7 +884,7 @@ Additional icons provided by Github
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCx-sN-IfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1279.2" y="-626.53673163418296"/>
+            <point key="canvasLocation" x="-1282.4000000000001" y="-624.73763118440786"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="KAI-rs-sod">
