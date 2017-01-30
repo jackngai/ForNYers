@@ -660,10 +660,10 @@ Powered by NewsAPI.org</string>
             </objects>
             <point key="canvasLocation" x="508" y="-800.14992503748135"/>
         </scene>
-        <!--View Controller-->
+        <!--Info Credits View Controller-->
         <scene sceneID="5pj-VI-1Zn">
             <objects>
-                <viewController id="Axz-8l-CCW" sceneMemberID="viewController">
+                <viewController id="Axz-8l-CCW" customClass="InfoCreditsViewController" customModule="ForNYers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LdF-AY-Lqf"/>
                         <viewControllerLayoutGuide type="bottom" id="zPN-ad-klW"/>
@@ -717,6 +717,9 @@ Additional icons provided by Github
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Axz-8l-CCW" eventType="touchUpInside" id="HIT-0w-9im"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -833,6 +836,9 @@ Additional icons provided by Github
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC7-mB-p41">
                                 <rect key="frame" x="288" y="23" width="32" height="32"/>
                                 <state key="normal" image="Info"/>
+                                <connections>
+                                    <segue destination="Axz-8l-CCW" kind="show" id="x2t-UA-yeN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
