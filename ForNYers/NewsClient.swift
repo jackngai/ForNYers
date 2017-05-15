@@ -34,7 +34,7 @@ class NewsClient: NSObject {
             data, response, error in
             
             guard error == nil else {
-                if let error = error as? NSError{
+                if let error = error{
                     print("Received error at startTask method. Error: \(error.localizedDescription)")
                     Helper.showAlert(title: "Internet Connection Error", message: error.localizedDescription)
                     
@@ -43,7 +43,7 @@ class NewsClient: NSObject {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Status code: \((response as? HTTPURLResponse)?.statusCode))")
+                print("Status code: \(String(describing: (response as? HTTPURLResponse)?.statusCode)))")
                 return
             }
             
