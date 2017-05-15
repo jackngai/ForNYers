@@ -36,7 +36,7 @@ class NewsClient: NSObject {
             guard error == nil else {
                 if let error = error{
                     print("Received error at startTask method. Error: \(error.localizedDescription)")
-                    Helper.showAlert(title: "Internet Connection Error", message: error.localizedDescription)
+                    Alert.show(title: "Internet Connection Error", message: error.localizedDescription)
                     
                 }
                 return

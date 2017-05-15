@@ -144,13 +144,13 @@ extension NewsClient {
                         guard let imageURL = URL(string: article["urlToImage"] as? String ?? ""),
                             let imageData = try? Data(contentsOf: imageURL) else {
                                 print("Unable to process url into image")
-                                Helper.showAlert(title: "No Internet Connection", message: "Connection lost while downloading image")
+                                Alert.show(title: "No Internet Connection", message: "Connection lost while downloading image")
                                 return
                         }
                         articleObject.image = imageData as NSData?
                     }
                     
-                    Helper.hideActivityIndicator()
+                    Alert.hideActivityIndicator()
             
                     
                     do {
@@ -172,7 +172,7 @@ extension NewsClient {
         }
         else {
             print("No internet connection")
-            Helper.showAlert(title: "No Internet Connection", message: "Displaying articles from the most recent download.")
+            Alert.show(title: "No Internet Connection", message: "Displaying articles from the most recent download.")
             
             
         }

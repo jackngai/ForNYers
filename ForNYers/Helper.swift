@@ -8,11 +8,14 @@
 
 import UIKit
 
-class Helper:UIViewController{
+// This class was created to refactor the alert messages code.
+// It also hides the loading indicator and gray alpha layer if an error occurs during the loading process.
+
+class Alert:UIViewController{
     
     internal static var alertController:UIAlertController!
     
-    internal static func showAlert(title alertTitle: String, message alertMessage: String) {
+    internal static func show(title alertTitle: String, message alertMessage: String) {
     
         alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Okay", style: .default)
@@ -30,7 +33,7 @@ class Helper:UIViewController{
         }
     }
     
-    internal static func showAlert(title alertTitle: String, message alertMessage: String, from viewController: UIViewController) {
+    internal static func show(title alertTitle: String, message alertMessage: String, from viewController: UIViewController) {
         alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Okay", style: .default)
         alertController.addAction(action)

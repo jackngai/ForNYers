@@ -78,10 +78,10 @@ extension NewsViewController {
         
         cell.newsTitle.text = newsItem.title
         cell.newsDescription.text = newsItem.desc
-        cell.newsDate.text = formatter.string(from: newsItem.publishedAt as! Date)
+        cell.newsDate.text = formatter.string(from: newsItem.publishedAt! as Date)
         cell.newsBy.text = newsItem.author
         
-        let image = UIImage(data: newsItem.image as! Data)!
+        let image = UIImage(data: newsItem.image! as Data)!
         
         cell.newsImage.image = image
         
