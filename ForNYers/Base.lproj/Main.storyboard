@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VsA-9l-JwZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VsA-9l-JwZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -394,12 +394,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTA will raise fare in March 2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkj-xI-Hrq">
-                                <rect key="frame" x="214" y="55" width="145" height="11"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="You saved:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="um7-h5-dOy">
                                 <rect key="frame" x="16" y="357" width="116.5" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -418,7 +412,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please refill $5.50 or more to get 11% bonus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzD-yj-b6b">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please refill $5.50 or more to get 5% bonus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzD-yj-b6b">
                                 <rect key="frame" x="16" y="431.5" width="343" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -447,7 +441,6 @@
                             <constraint firstItem="UmE-dT-cLe" firstAttribute="centerX" secondItem="U7P-tV-yFQ" secondAttribute="centerX" id="1CX-Gl-2Ba"/>
                             <constraint firstItem="UmE-dT-cLe" firstAttribute="top" secondItem="GP6-qI-PYB" secondAttribute="bottom" constant="8" id="2py-35-YQQ"/>
                             <constraint firstItem="W9G-xZ-ZkQ" firstAttribute="leading" secondItem="U7P-tV-yFQ" secondAttribute="leadingMargin" constant="-1" id="5hg-kh-QB2"/>
-                            <constraint firstItem="Gkj-xI-Hrq" firstAttribute="trailing" secondItem="U7P-tV-yFQ" secondAttribute="trailingMargin" id="74l-I0-FfX"/>
                             <constraint firstItem="nzD-yj-b6b" firstAttribute="top" secondItem="nAb-Ef-0Gb" secondAttribute="bottom" constant="8" id="9Fr-ho-UBu"/>
                             <constraint firstItem="hES-jz-2Pj" firstAttribute="leading" secondItem="7ae-SK-rhi" secondAttribute="trailing" constant="7" id="AOs-qJ-Q58"/>
                             <constraint firstItem="nAb-Ef-0Gb" firstAttribute="trailing" secondItem="U7P-tV-yFQ" secondAttribute="trailingMargin" constant="1" id="Hs9-u9-dok"/>
@@ -483,7 +476,6 @@
                             <constraint firstItem="7ae-SK-rhi" firstAttribute="leading" secondItem="U7P-tV-yFQ" secondAttribute="leadingMargin" id="pny-ue-eF4"/>
                             <constraint firstItem="ze6-K5-IsC" firstAttribute="leading" secondItem="U7P-tV-yFQ" secondAttribute="leading" id="qv6-i9-wgk"/>
                             <constraint firstItem="QOW-Ld-Ufq" firstAttribute="trailing" secondItem="U7P-tV-yFQ" secondAttribute="trailingMargin" id="tf2-vZ-K7S"/>
-                            <constraint firstItem="Gkj-xI-Hrq" firstAttribute="top" secondItem="UmE-dT-cLe" secondAttribute="bottom" constant="6" id="vgH-nC-q5s"/>
                             <constraint firstItem="6Gk-ut-GMW" firstAttribute="leading" secondItem="U7P-tV-yFQ" secondAttribute="leadingMargin" id="vhk-Gc-AEy"/>
                             <constraint firstItem="um7-h5-dOy" firstAttribute="top" secondItem="W9G-xZ-ZkQ" secondAttribute="bottom" constant="8" id="wVe-vS-RkO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nzD-yj-b6b" secondAttribute="trailing" id="zG0-lN-NC3"/>
@@ -925,6 +917,6 @@ Additional icons provided by Github
         <image name="Walking" width="1061" height="1286"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uOw-1S-Z8s"/>
+        <segue reference="NNQ-6G-BcU"/>
     </inferredMetricsTieBreakers>
 </document>
