@@ -73,8 +73,8 @@ class MetroCardViewController: UIViewController {
             savingsField.text = "$0.00"
         } else {
             bonusLabel.isHidden = true
-            costField.text = String(describing: calculatedValue * 0.90091)
-            savingsField.text = String(describing: calculatedValue * 0.09909)
+            costField.text = String(describing: calculatedValue * 0.95)
+            savingsField.text = String(describing: calculatedValue * 0.05)
         }
     }
     
