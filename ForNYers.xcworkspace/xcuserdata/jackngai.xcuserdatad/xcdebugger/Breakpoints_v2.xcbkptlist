@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "showAlert(title:message:)"
+            landmarkName = "show(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,5 +1,5 @@
 //
-//  Helper.swift
+//  Alert.swift
 //  ForNYers
 //
 //  Created by Jack Ngai on 12/10/16.
